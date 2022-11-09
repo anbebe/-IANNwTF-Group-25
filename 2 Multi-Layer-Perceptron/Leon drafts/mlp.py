@@ -25,11 +25,12 @@ class MLP:
 
 
 mlp = MLP(2, 10, 1, np.array([[1], [1]]))
-epochs = 5
+epochs = 100
 for i in range(epochs):
     mlp.forward_step()
+    print("mlp output", mlp.output)
     error = np.array([1 - mlp.output[0]])
     print("error in epoch ",i,  error)
-    mlp.backpropagation(0.05, error)
+    mlp.backpropagation(0.005, error)
 
 
