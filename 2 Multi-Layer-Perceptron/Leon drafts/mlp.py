@@ -9,18 +9,14 @@ class MLP:
         self.output = np.zeros([n_outputs, 1])
 
     def forward_step(self):
-        # print("input hiddenLayer", self.hiddenLayer.x.shape)
         self.hiddenLayer.forward_step()
-        # print("output hiddenLayer", self.hiddenLayer.a.shape)
-        self.outputLayer.set_input(self.hiddenLayer.a)
-        # print("input outputLayer", self.outputLayer.x.shape)
+        self.outputLayer.set_input(self.hiddenLayer.a) # set input of outputLayer to output of hiddenLayer
         self.outputLayer.forward_step()
-        # print("output outputLayer", self.outputLayer.a.shape)
         self.output = self.outputLayer.a
 
 
     def backpropagation(self, alpha, error):
-        self.outputLayer.backward_step(alpha, error)
+        self.outputLayer.backward_step(alpha, error) 
         self.hiddenLayer.backward_step(alpha, self.outputLayer.dx)
 
 
