@@ -30,13 +30,15 @@ class Layer:
         self.a = self.ReLU(self.z) # activation output -> m:1 = ReLU(m:1)
         
     def backward_step(self, alpha, error):
-        dz = error * self.dReLU(self.z) # gradient activation input -> m:1 = m:1 * m:1        
+                
+        dz = error * self.dReLU(self.z) # gradient activation input -> m:1 = m:1 * m:1
         dw = self.x.dot(dz.T)# gradient weights -> n:m = n:1 o 1:m        
+        print("dw", dw)
         db = dz # gradient biases -> m:1 = m:1 * 1
         self.dx = self.w.dot(dz) # gradients input -> n:1 = n:m o m:1
 
-        self.w = self.w - alpha*-dw
-        self.b = self.b - alpha*-db
+        self.w = self.w - alpha*dw
+        self.b = self.b - alpha*db
 
 
 
