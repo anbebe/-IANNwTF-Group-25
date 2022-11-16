@@ -13,5 +13,7 @@ def plot_data(x, t):
     plt.plot(x_2,y_2,'r-')
     plt.show()
 
+
+
 x, t = generate_data()
 plot_data(x,t)

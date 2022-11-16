@@ -55,6 +55,7 @@ class MLP:
         #self.hiddenLayer.backward_step(alpha, self.outputLayer.dx)
 
 
+
 inputs, targets = data.generate_data()
 mlp = MLP(2, np.array([1, 10, 1]), np.array([[1], [1]]))
 inputs, targets = data.generate_data()
