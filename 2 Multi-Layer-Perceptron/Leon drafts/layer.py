@@ -25,6 +25,7 @@ class Layer:
     def dReLU(self, z):
         return z > 0
 
+
     def forward_step(self):
         self.z = self.w.T.dot(self.x) + self.b # activation input -> m:1 = m:n o n:1
         self.a = self.ReLU(self.z) # activation output -> m:1 = ReLU(m:1)
