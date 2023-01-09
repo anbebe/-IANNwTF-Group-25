@@ -1,2 +1,2 @@
-model_checkpoint_path: "trained_model"
-all_model_checkpoint_paths: "trained_model"
+model_checkpoint_path: "trained_model3"
+all_model_checkpoint_paths: "trained_model3"
